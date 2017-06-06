@@ -6,7 +6,7 @@ var MyTitle = React.createClass({
     render () {
         return (
             div(null,
-                h1(null, 'A component!')
+                h1({ style: { color: this.props.color, size: this.props.fontstyle } }, this.props.title)
             )
         )
     }
@@ -14,12 +14,16 @@ var MyTitle = React.createClass({
 
 var MyTitleFactory = React.createFactory(MyTitle)
 
-var MyFirstComponent = (
-    div(null,
-        MyTitleFactory(null),
-        MyTitleFactory(null),
-        MyTitleFactory(null)
-    )
-)
+var MyFirstComponent = React.createClass({
+    render: function () {
+        return (
+            div(null,
+                MyTitleFactory({title: 'a title prop', color: 'blue'}),
+                MyTitleFactory({title: 'another title', color: 'peru'}),
+                MyTitleFactory({title: 'it\'s the final title', color: 'lavender'})
+            )
+        )
+    }
+})
 
-ReactDOM.render(MyFirstComponent, document.getElementById('app'))
+ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
