@@ -1,7 +1,8 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
-    "lint": "standard"
+    "lint": "standard",
+    "build": "Webpack js/ClientApp.js public/bundle.js"
   },
   "dependencies": {
     "axios": "0.16.1",
