@@ -1,6 +1,5 @@
 import React from 'react'
 import { render } from 'react-dom'
-import MyTitle from './MyTitle'
 import '../public/normalize.css'
 import '../public/style.css'
 
