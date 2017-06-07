@@ -8,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/public/' // tell Webpack where the static directory is.
+  },
   resolve: {
     extensions: ['.js', '.json']
   },
@@ -19,15 +22,21 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre', // Before build process, run this loader. Lint the input, not the output of the build process.
+        test: /\.js$/, // JS files.
+        loader: 'eslint-loader', // Use this loader.
+        exclude: /node_modules/ // exclude all node modules. I only want my code linted.
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.css$/, // CSS files.
         use: [
           'style-loader',
           {
-            loader: 'css-loader',
+            loader: 'css-loader', // Use the CSS loader.
             options: {
               url: false
             }
