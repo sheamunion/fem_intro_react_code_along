@@ -9,7 +9,8 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    publicPath: '/public/' // tell Webpack where the static directory is.
+    publicPath: '/public/', // tell Webpack where the static directory is.
+    historyAPIFallback: true // Reroute 404s to the home page
   },
   resolve: {
     extensions: ['.js', '.json']
