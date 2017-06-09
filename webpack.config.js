@@ -10,7 +10,7 @@ module.exports = {
   },
   devServer: {
     publicPath: '/public/', // tell Webpack where the static directory is.
-    historyAPIFallback: true // Reroute 404s to the home page
+    historyApiFallback: true // Reroute 404s to the home page
   },
   resolve: {
     extensions: ['.js', '.json']
@@ -27,6 +27,10 @@ module.exports = {
         test: /\.js$/, // JS files.
         loader: 'eslint-loader', // Use this loader.
         exclude: /node_modules/ // exclude all node modules. I only want my code linted.
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         test: /\.js$/,
