@@ -8,12 +8,15 @@ const Search = React.createClass({
       searchTerm: 'this is the default term'
     }
   },
+  handleSearchTermChange (event) {
+    this.setState({searchTerm: event.target.value})
+  },
   render () {
     return (
       <div className='search'>
         <header>
-          <h1>donkey</h1>
-          <input type='text' placeholder='Search' value={this.state.searchTerm} />
+          <h1>Cool Videoz</h1>
+          <input type='text' placeholder='Search' value={this.state.searchTerm} onChange={this.handleSearchTermChange} />
         </header>
         <div>
           {preload.shows.map((show) => {
