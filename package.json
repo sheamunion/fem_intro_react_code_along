@@ -1,9 +1,10 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
-    "lint": "eslint js/**/*.js webpack.config.js",
     "build": "webpack",
     "dev": "webpack-dev-server",
+    "lint": "eslint js/**/*.js webpack.config.js",
+    "test": "NODE_ENV=test jest",
     "watch": "npm run build -- --watch"
   },
   "dependencies": {
