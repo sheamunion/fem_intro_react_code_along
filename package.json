@@ -5,6 +5,7 @@
     "dev": "webpack-dev-server",
     "lint": "eslint js/**/*.js webpack.config.js",
     "test": "NODE_ENV=test jest",
+    "update-test": "npm run test -- -u",
     "watch": "npm run build -- --watch"
   },
   "dependencies": {
