@@ -2,6 +2,7 @@
   "scripts": {
     "api": "node ratingsAPI.js",
     "build": "webpack",
+    "cover": "npm run test -- --coverage",
     "dev": "webpack-dev-server",
     "lint": "eslint js/**/*.js webpack.config.js",
     "test": "NODE_ENV=test jest",
