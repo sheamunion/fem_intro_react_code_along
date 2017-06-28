@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Landing from './Landing'
 import Search from './Search'
+import Details from './Details'
+import preload from '../public/data.json'
 
 const App = React.createClass({
   render () {
@@ -10,7 +12,11 @@ const App = React.createClass({
       <BrowserRouter>
         <div className='app'>
           <Route exact path='/' component={Landing} />
-          <Route path='/search' component={Search} />
+          <Route
+            path='/search'
+            component={(props) => <Search shows={preload.shows} {...props} />}
+          />
+          <Route path='/details/:id' component={Details} />
         </div>
       </BrowserRouter>
     )
